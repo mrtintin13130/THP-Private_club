@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Club</title>
+</head>
+<body>
+	<h1><center>Bienvenu dans ce club privé !</center></h1>
+	<% if session[:user_id] %>
+	<h3><center>You are now logged in</center></h3>
+	<h5><center><a href="https://www.youtube.com">Private Club</a></center></h5>
+	<% end %>
+</body>
+</html>

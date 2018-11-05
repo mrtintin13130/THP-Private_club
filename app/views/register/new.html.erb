@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1><center>Register</center></h1>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+			</div>
+			<div class="col">
+				<%= form_for @user, url: {action: "create"} do |user| %>                                         
+				<div class="form-group">
+					<label for="Email">Email address</label>
+					<%= user.email_field :email, class: "form-control", placeholder: "Enter email" %>
+					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				</div>
+				<div class="form-group">
+					<label for="first_name">First Name</label>
+					<%= user.text_field :first_name, class: "form-control", placeholder: "Enter your first name" %>
+				</div>
+				<div class="form-group">
+					<label for="Last_name">Last Name</label>
+					<%= user.text_field :last_name, class: "form-control", placeholder: "Enter your last name" %>
+				</div>
+				<center><%= user.submit "Submit", class: "btn btn-primary" %></center>
+				<% end %>
+			</div>
+			<div class="col">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
