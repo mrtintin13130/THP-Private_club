@@ -10,7 +10,7 @@
 			<div class="col">
 			</div>
 			<div class="col">
-				<%= form_for @user, url: {action: "create"} do |user| %>                                         
+				<%= form_for @user, url: {action: "create"} do |user| %>
 				<div class="form-group">
 					<label for="Email">Email address</label>
 					<%= user.email_field :email, class: "form-control", placeholder: "Enter email" %>

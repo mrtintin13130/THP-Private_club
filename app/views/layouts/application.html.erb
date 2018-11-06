@@ -11,8 +11,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <header>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Social Network</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Private Club</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,58 +20,62 @@
       <ul class="navbar-nav">
 
         <% if current_page?('/') %>
-        
-          <li class="nav-item active">
-            <%= link_to 'Home', '/', class: "nav-link" %>
-          </li>
-        
+
+        <li class="nav-item active">
+          <%= link_to 'Home', '/', class: "nav-link" %>
+        </li>
+
         <% else %>
-        
-          <li class="nav-item">
-            <%= link_to 'Home', '/', class: "nav-link" %>
-          </li>
+
+        <li class="nav-item">
+          <%= link_to 'Home', '/', class: "nav-link" %>
+        </li>
 
         <% end %>
 
         <% if session[:user_id] %>
 
-          <li class="nav-item">
-            <%= link_to 'Private Club', 'http://www.youtube.fr', class: "nav-link" %>
-          </li>
+        <li class="nav-item">
+          <%= link_to 'Private Club', 'http://www.youtube.fr', class: "nav-link", target: "_blank" %>
+        </li>
 
-          <li class="nav-item">
-            <%= link_to 'Logout', '/logout', class: "nav-link" %>
-          </li>
+        <li class="nav-item">
+          <%= link_to 'My account', "/user/#{session[:user_id]}", class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to 'Logout', '/logout', class: "nav-link" %>
+        </li>
 
         <% else %>
 
-          <% if current_page?('/register/new') %>
+        <% if current_page?('/register/new') %>
 
-            <li class="nav-item active">
-              <%= link_to 'Register', '/register/new', class: "nav-link" %>
-            </li>
+        <li class="nav-item active">
+          <%= link_to 'Register', '/register/new', class: "nav-link" %>
+        </li>
 
-          <% else %>
+        <% else %>
 
-            <li class="nav-item">
-              <%= link_to 'Register', '/register/new', class: "nav-link" %>
-            </li>
+        <li class="nav-item">
+          <%= link_to 'Register', '/register/new', class: "nav-link" %>
+        </li>
 
-          <% end %>
+        <% end %>
 
-          <% if current_page?('/login') %>
+        <% if current_page?('/login') %>
 
-            <li class="nav-item active">
-              <%= link_to 'Login', '/login', class: "nav-link" %>
-            </li>
+        <li class="nav-item active">
+          <%= link_to 'Login', '/login', class: "nav-link" %>
+        </li>
 
-          <% else %>
+        <% else %>
 
-            <li class="nav-item">
-              <%= link_to 'Login', '/login', class: "nav-link" %>
-            </li>
+        <li class="nav-item">
+          <%= link_to 'Login', '/login', class: "nav-link" %>
+        </li>
 
-          <% end %>
+        <% end %>
         <% end %>
       </ul>
     </div>
@@ -79,6 +83,10 @@
 </header>
 
 <body>
-  <%= yield %>
-</body>
-</html>
+  <% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+  <div class="container">
+    <%= yield %>
+  </body>
+  </html>

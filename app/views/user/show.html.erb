@@ -1,0 +1,14 @@
+<h1><center>My account</center></h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+        <h3><center><%= User.find(session[:user_id]).first_name %> <%= User.find(session[:user_id]).last_name %></center></h3>
+        <h4><center><%= User.find(session[:user_id]).email %></center></h4>
+        <center><%= link_to 'Edit', "/user/#{session[:user_id]}/edit", class: "btn btn-primary" %></center>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>

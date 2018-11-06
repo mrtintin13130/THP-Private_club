@@ -1,24 +1,29 @@
-# README
+# PRIVATE CLUB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## INSTALLATION
 
-Things you may want to cover:
+Une fois le repo cloné:
 
-* Ruby version
+```
+~ cd [nom_du_repo]
+~ rails db:create
+~ rails db:migrate
+```
 
-* System dependencies
+## UTILISATION
 
-* Configuration
+Pour lancer le serveur:
 
-* Database creation
+```
+~ rails server
+```
 
-* Database initialization
+## MEMBRES DU GROUPE
 
-* How to run the test suite
+* Stéphane (Github user: Timmo404)
 
-* Services (job queues, cache servers, search engines, etc.)
+* Mickael (Github user: jango974)
 
-* Deployment instructions
+* Elliot (Github user: nomoon456)
 
-* ...
+* Martin (Github user: mrtintin13130)
